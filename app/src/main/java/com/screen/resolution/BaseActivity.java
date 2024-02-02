@@ -91,8 +91,10 @@ public class BaseActivity extends AppCompatActivity {
                 } else {
                     configuration.densityDpi = DisplayMetrics.DENSITY_DEVICE_STABLE;
                 }
+                configuration.fontScale = 1.0f;
                 newContext = baseContext.createConfigurationContext(configuration);
             }
+
         }
         super.attachBaseContext(newContext);
     }
