@@ -15,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-@RequiresApi(api = 34)
 public class BaseActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.N)
@@ -54,6 +53,26 @@ public class BaseActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.P)
     private static final int[] ORDERED_DENSITY_DP_P = {
+            DisplayMetrics.DENSITY_LOW,
+            DisplayMetrics.DENSITY_MEDIUM,
+            DisplayMetrics.DENSITY_TV,
+            DisplayMetrics.DENSITY_HIGH,
+            DisplayMetrics.DENSITY_260,
+            DisplayMetrics.DENSITY_280,
+            DisplayMetrics.DENSITY_XHIGH,
+            DisplayMetrics.DENSITY_300,
+            DisplayMetrics.DENSITY_340,
+            DisplayMetrics.DENSITY_360,
+            DisplayMetrics.DENSITY_400,
+            DisplayMetrics.DENSITY_420,
+            DisplayMetrics.DENSITY_440,
+            DisplayMetrics.DENSITY_XXHIGH,
+            DisplayMetrics.DENSITY_560,
+            DisplayMetrics.DENSITY_XXXHIGH,
+    };
+
+    @TargetApi(Build.VERSION_CODES.Q)
+    private static final int[] ORDERED_DENSITY_DP_Q = {
             DisplayMetrics.DENSITY_LOW,
             DisplayMetrics.DENSITY_MEDIUM,
             DisplayMetrics.DENSITY_TV,
@@ -109,7 +128,9 @@ public class BaseActivity extends AppCompatActivity {
     private static int findDensityDpCanFitScreen(final int densityDp) {
         int[] orderedDensityDp;
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+            orderedDensityDp = ORDERED_DENSITY_DP_Q;
+        } else if(Build.VERSION.SDK_INT == Build.VERSION_CODES.P) {
             orderedDensityDp = ORDERED_DENSITY_DP_P;
         } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             orderedDensityDp = ORDERED_DENSITY_DP_N_MR1;
