@@ -12,8 +12,10 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+@RequiresApi(api = 34)
 public class BaseActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.N)
@@ -47,7 +49,7 @@ public class BaseActivity extends AppCompatActivity {
             DisplayMetrics.DENSITY_420,
             DisplayMetrics.DENSITY_XXHIGH,
             DisplayMetrics.DENSITY_560,
-            DisplayMetrics.DENSITY_XXXHIGH
+            DisplayMetrics.DENSITY_XXXHIGH,
     };
 
     @TargetApi(Build.VERSION_CODES.P)
@@ -59,6 +61,10 @@ public class BaseActivity extends AppCompatActivity {
             DisplayMetrics.DENSITY_260,
             DisplayMetrics.DENSITY_280,
             DisplayMetrics.DENSITY_XHIGH,
+            DisplayMetrics.DENSITY_300,
+            DisplayMetrics.DENSITY_600,
+            DisplayMetrics.DENSITY_520,
+            DisplayMetrics.DENSITY_450,
             DisplayMetrics.DENSITY_340,
             DisplayMetrics.DENSITY_360,
             DisplayMetrics.DENSITY_400,
@@ -66,7 +72,7 @@ public class BaseActivity extends AppCompatActivity {
             DisplayMetrics.DENSITY_440,
             DisplayMetrics.DENSITY_XXHIGH,
             DisplayMetrics.DENSITY_560,
-            DisplayMetrics.DENSITY_XXXHIGH
+            DisplayMetrics.DENSITY_XXXHIGH,
     };
 
 
